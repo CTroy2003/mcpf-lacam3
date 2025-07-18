@@ -1,0 +1,61 @@
+{
+  "experiment_info": {
+    "map_file": "scripts/map/warehouse-20-40-10-2-1.map",
+    "scenario_file": "scripts/scen/warehouse-20-40-10/warehouse-20-40-10-2-1-random-1.scen",
+    "num_agents": 500,
+    "max_waypoints": 2,
+    "total_segments": 1500,
+    "command": "lacam.py --exe build/main --map scripts/map/warehouse-20-40-10-2-1.map --scen scripts/scen/warehouse-20-40-10/warehouse-20-40-10-2-1-random-1.scen --num 500 --out results/comprehensive/warehouse-20-40-10-2-1_2wp_500agents",
+    "timestamp": "2025-07-15T06:57:41.355113",
+    "exe_path": "build/main",
+    "seed": 42,
+    "timeout": 60
+  },
+  "global_results": {
+    "total_cost": 255097,
+    "total_runtime_ms": 2659.78741645813,
+    "wall_clock_time_ms": 2663.8998985290527,
+    "max_makespan": 421,
+    "num_segments": 3,
+    "all_segments_solved": true,
+    "end_time": "2025-07-15T06:57:44.019019"
+  },
+  "segment_results": [
+    {
+      "segment_id": 0,
+      "cost": 82904,
+      "makespan": 419,
+      "runtime_ms": 905.3599834442139,
+      "solved": true,
+      "output_file": "results/comprehensive/warehouse-20-40-10-2-1_2wp_500agents/segment_0.yaml"
+    },
+    {
+      "segment_id": 1,
+      "cost": 86709,
+      "makespan": 421,
+      "runtime_ms": 829.4994831085205,
+      "solved": true,
+      "output_file": "results/comprehensive/warehouse-20-40-10-2-1_2wp_500agents/segment_1.yaml"
+    },
+    {
+      "segment_id": 2,
+      "cost": 85484,
+      "makespan": 388,
+      "runtime_ms": 924.9279499053955,
+      "solved": true,
+      "output_file": "results/comprehensive/warehouse-20-40-10-2-1_2wp_500agents/segment_2.yaml"
+    }
+  ],
+  "agent_summary": {
+    "total_agents": 500,
+    "max_waypoints_per_agent": 2,
+    "total_waypoint_to_waypoint_transitions": 1000,
+    "total_path_segments": 1500
+  },
+  "performance_metrics": {
+    "avg_runtime_per_segment_ms": 886.5958054860433,
+    "avg_cost_per_segment": 85032.33333333333,
+    "avg_cost_per_agent": 510.194,
+    "cost_efficiency": 95.76073040164121
+  }
+}

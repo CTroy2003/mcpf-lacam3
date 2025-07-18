@@ -1,0 +1,31 @@
+Multi-Waypoint LACAM Results Summary
+========================================
+
+Experiment Date: 2025-07-15T06:57:47.212397
+Map: scripts/map/warehouse-20-40-10-2-1.map
+Scenario: scripts/scen/warehouse-20-40-10/warehouse-20-40-10-2-1-random-2.scen
+Command: lacam.py --exe build/main --map scripts/map/warehouse-20-40-10-2-1.map --scen scripts/scen/warehouse-20-40-10/warehouse-20-40-10-2-1-random-2.scen --num 300 --out results/comprehensive/warehouse-20-40-10-2-1_4wp_300agents
+
+Agent Configuration:
+  Total Agents: 300
+  Max Waypoints per Agent: 4
+  Total Path Segments: 1500
+
+Global Results:
+  Total Cost (SOC): 242916
+  Max Makespan: 419
+  Total Runtime: 2548ms
+  Wall-Clock Time: 2553ms
+  All Segments Solved: True
+
+Performance Metrics:
+  Avg Runtime per Segment: 509.6ms
+  Avg Cost per Segment: 48583.2
+  Avg Cost per Agent: 809.7
+
+Segment Breakdown:
+  Segment 0: cost=49642, makespan=419, runtime=493ms, solved=True
+  Segment 1: cost=50846, makespan=409, runtime=526ms, solved=True
+  Segment 2: cost=45832, makespan=379, runtime=507ms, solved=True
+  Segment 3: cost=48787, makespan=399, runtime=480ms, solved=True
+  Segment 4: cost=47809, makespan=397, runtime=541ms, solved=True

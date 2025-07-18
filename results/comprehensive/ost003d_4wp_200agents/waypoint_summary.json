@@ -1,0 +1,77 @@
+{
+  "experiment_info": {
+    "map_file": "scripts/map/ost003d.map",
+    "scenario_file": "scripts/scen/ost003d/ost003d-random-2.scen",
+    "num_agents": 200,
+    "max_waypoints": 4,
+    "total_segments": 1000,
+    "command": "lacam.py --exe build/main --map scripts/map/ost003d.map --scen scripts/scen/ost003d/ost003d-random-2.scen --num 200 --out results/comprehensive/ost003d_4wp_200agents",
+    "timestamp": "2025-07-15T06:55:41.489407",
+    "exe_path": "build/main",
+    "seed": 42,
+    "timeout": 60
+  },
+  "global_results": {
+    "total_cost": 158877,
+    "total_runtime_ms": 1956.0182094573975,
+    "wall_clock_time_ms": 1959.9182605743408,
+    "max_makespan": 399,
+    "num_segments": 5,
+    "all_segments_solved": true,
+    "end_time": "2025-07-15T06:55:43.449331"
+  },
+  "segment_results": [
+    {
+      "segment_id": 0,
+      "cost": 31621,
+      "makespan": 397,
+      "runtime_ms": 369.30108070373535,
+      "solved": true,
+      "output_file": "results/comprehensive/ost003d_4wp_200agents/segment_0.yaml"
+    },
+    {
+      "segment_id": 1,
+      "cost": 30958,
+      "makespan": 392,
+      "runtime_ms": 401.2329578399658,
+      "solved": true,
+      "output_file": "results/comprehensive/ost003d_4wp_200agents/segment_1.yaml"
+    },
+    {
+      "segment_id": 2,
+      "cost": 31141,
+      "makespan": 370,
+      "runtime_ms": 368.9086437225342,
+      "solved": true,
+      "output_file": "results/comprehensive/ost003d_4wp_200agents/segment_2.yaml"
+    },
+    {
+      "segment_id": 3,
+      "cost": 31108,
+      "makespan": 399,
+      "runtime_ms": 340.65890312194824,
+      "solved": true,
+      "output_file": "results/comprehensive/ost003d_4wp_200agents/segment_3.yaml"
+    },
+    {
+      "segment_id": 4,
+      "cost": 34049,
+      "makespan": 393,
+      "runtime_ms": 475.91662406921387,
+      "solved": true,
+      "output_file": "results/comprehensive/ost003d_4wp_200agents/segment_4.yaml"
+    }
+  ],
+  "agent_summary": {
+    "total_agents": 200,
+    "max_waypoints_per_agent": 4,
+    "total_waypoint_to_waypoint_transitions": 800,
+    "total_path_segments": 1000
+  },
+  "performance_metrics": {
+    "avg_runtime_per_segment_ms": 391.2036418914795,
+    "avg_cost_per_segment": 31775.4,
+    "avg_cost_per_agent": 794.385,
+    "cost_efficiency": 81.06307451487399
+  }
+}

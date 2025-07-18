@@ -1,0 +1,31 @@
+Multi-Waypoint LACAM Results Summary
+========================================
+
+Experiment Date: 2025-07-15T06:56:49.992916
+Map: scripts/map/maze-128-128-10.map
+Scenario: scripts/scen/maze-128-128-10/maze-128-128-10-random-2.scen
+Command: lacam.py --exe build/main --map scripts/map/maze-128-128-10.map --scen scripts/scen/maze-128-128-10/maze-128-128-10-random-2.scen --num 500 --out results/comprehensive/maze-128-128-10_4wp_500agents
+
+Agent Configuration:
+  Total Agents: 500
+  Max Waypoints per Agent: 4
+  Total Path Segments: 2500
+
+Global Results:
+  Total Cost (SOC): 568170
+  Max Makespan: 527
+  Total Runtime: 7039ms
+  Wall-Clock Time: 7045ms
+  All Segments Solved: True
+
+Performance Metrics:
+  Avg Runtime per Segment: 1407.7ms
+  Avg Cost per Segment: 113634.0
+  Avg Cost per Agent: 1136.3
+
+Segment Breakdown:
+  Segment 0: cost=116265, makespan=526, runtime=1071ms, solved=True
+  Segment 1: cost=113324, makespan=505, runtime=1164ms, solved=True
+  Segment 2: cost=116637, makespan=510, runtime=1727ms, solved=True
+  Segment 3: cost=112384, makespan=503, runtime=1363ms, solved=True
+  Segment 4: cost=109560, makespan=527, runtime=1713ms, solved=True

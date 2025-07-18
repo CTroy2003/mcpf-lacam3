@@ -1,0 +1,77 @@
+{
+  "experiment_info": {
+    "map_file": "scripts/map/warehouse-20-40-10-2-1.map",
+    "scenario_file": "scripts/scen/warehouse-20-40-10/warehouse-20-40-10-2-1-random-2.scen",
+    "num_agents": 300,
+    "max_waypoints": 4,
+    "total_segments": 1500,
+    "command": "lacam.py --exe build/main --map scripts/map/warehouse-20-40-10-2-1.map --scen scripts/scen/warehouse-20-40-10/warehouse-20-40-10-2-1-random-2.scen --num 300 --out results/comprehensive/warehouse-20-40-10-2-1_4wp_300agents",
+    "timestamp": "2025-07-15T06:57:47.212397",
+    "exe_path": "build/main",
+    "seed": 42,
+    "timeout": 60
+  },
+  "global_results": {
+    "total_cost": 242916,
+    "total_runtime_ms": 2547.9156970977783,
+    "wall_clock_time_ms": 2552.9537200927734,
+    "max_makespan": 419,
+    "num_segments": 5,
+    "all_segments_solved": true,
+    "end_time": "2025-07-15T06:57:49.765354"
+  },
+  "segment_results": [
+    {
+      "segment_id": 0,
+      "cost": 49642,
+      "makespan": 419,
+      "runtime_ms": 492.88272857666016,
+      "solved": true,
+      "output_file": "results/comprehensive/warehouse-20-40-10-2-1_4wp_300agents/segment_0.yaml"
+    },
+    {
+      "segment_id": 1,
+      "cost": 50846,
+      "makespan": 409,
+      "runtime_ms": 526.1123180389404,
+      "solved": true,
+      "output_file": "results/comprehensive/warehouse-20-40-10-2-1_4wp_300agents/segment_1.yaml"
+    },
+    {
+      "segment_id": 2,
+      "cost": 45832,
+      "makespan": 379,
+      "runtime_ms": 507.36546516418457,
+      "solved": true,
+      "output_file": "results/comprehensive/warehouse-20-40-10-2-1_4wp_300agents/segment_2.yaml"
+    },
+    {
+      "segment_id": 3,
+      "cost": 48787,
+      "makespan": 399,
+      "runtime_ms": 480.49354553222656,
+      "solved": true,
+      "output_file": "results/comprehensive/warehouse-20-40-10-2-1_4wp_300agents/segment_3.yaml"
+    },
+    {
+      "segment_id": 4,
+      "cost": 47809,
+      "makespan": 397,
+      "runtime_ms": 541.0616397857666,
+      "solved": true,
+      "output_file": "results/comprehensive/warehouse-20-40-10-2-1_4wp_300agents/segment_4.yaml"
+    }
+  ],
+  "agent_summary": {
+    "total_agents": 300,
+    "max_waypoints_per_agent": 4,
+    "total_waypoint_to_waypoint_transitions": 1200,
+    "total_path_segments": 1500
+  },
+  "performance_metrics": {
+    "avg_runtime_per_segment_ms": 509.58313941955566,
+    "avg_cost_per_segment": 48583.2,
+    "avg_cost_per_agent": 809.72,
+    "cost_efficiency": 95.15096105665891
+  }
+}

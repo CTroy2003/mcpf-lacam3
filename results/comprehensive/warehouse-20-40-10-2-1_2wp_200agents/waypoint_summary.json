@@ -1,0 +1,61 @@
+{
+  "experiment_info": {
+    "map_file": "scripts/map/warehouse-20-40-10-2-1.map",
+    "scenario_file": "scripts/scen/warehouse-20-40-10/warehouse-20-40-10-2-1-random-1.scen",
+    "num_agents": 200,
+    "max_waypoints": 2,
+    "total_segments": 600,
+    "command": "lacam.py --exe build/main --map scripts/map/warehouse-20-40-10-2-1.map --scen scripts/scen/warehouse-20-40-10/warehouse-20-40-10-2-1-random-1.scen --num 200 --out results/comprehensive/warehouse-20-40-10-2-1_2wp_200agents",
+    "timestamp": "2025-07-15T06:57:36.754725",
+    "exe_path": "build/main",
+    "seed": 42,
+    "timeout": 60
+  },
+  "global_results": {
+    "total_cost": 99962,
+    "total_runtime_ms": 1144.571304321289,
+    "wall_clock_time_ms": 1146.9035148620605,
+    "max_makespan": 419,
+    "num_segments": 3,
+    "all_segments_solved": true,
+    "end_time": "2025-07-15T06:57:37.901634"
+  },
+  "segment_results": [
+    {
+      "segment_id": 0,
+      "cost": 33721,
+      "makespan": 419,
+      "runtime_ms": 419.33465003967285,
+      "solved": true,
+      "output_file": "results/comprehensive/warehouse-20-40-10-2-1_2wp_200agents/segment_0.yaml"
+    },
+    {
+      "segment_id": 1,
+      "cost": 34033,
+      "makespan": 370,
+      "runtime_ms": 355.1826477050781,
+      "solved": true,
+      "output_file": "results/comprehensive/warehouse-20-40-10-2-1_2wp_200agents/segment_1.yaml"
+    },
+    {
+      "segment_id": 2,
+      "cost": 32208,
+      "makespan": 369,
+      "runtime_ms": 370.0540065765381,
+      "solved": true,
+      "output_file": "results/comprehensive/warehouse-20-40-10-2-1_2wp_200agents/segment_2.yaml"
+    }
+  ],
+  "agent_summary": {
+    "total_agents": 200,
+    "max_waypoints_per_agent": 2,
+    "total_waypoint_to_waypoint_transitions": 400,
+    "total_path_segments": 600
+  },
+  "performance_metrics": {
+    "avg_runtime_per_segment_ms": 381.5237681070964,
+    "avg_cost_per_segment": 33320.666666666664,
+    "avg_cost_per_agent": 499.81,
+    "cost_efficiency": 87.15815995386721
+  }
+}

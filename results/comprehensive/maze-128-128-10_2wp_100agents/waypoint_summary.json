@@ -1,0 +1,61 @@
+{
+  "experiment_info": {
+    "map_file": "scripts/map/maze-128-128-10.map",
+    "scenario_file": "scripts/scen/maze-128-128-10/maze-128-128-10-random-1.scen",
+    "num_agents": 100,
+    "max_waypoints": 2,
+    "total_segments": 300,
+    "command": "lacam.py --exe build/main --map scripts/map/maze-128-128-10.map --scen scripts/scen/maze-128-128-10/maze-128-128-10-random-1.scen --num 100 --out results/comprehensive/maze-128-128-10_2wp_100agents",
+    "timestamp": "2025-07-15T06:56:26.260271",
+    "exe_path": "build/main",
+    "seed": 42,
+    "timeout": 60
+  },
+  "global_results": {
+    "total_cost": 59625,
+    "total_runtime_ms": 1075.3512382507324,
+    "wall_clock_time_ms": 1077.341079711914,
+    "max_makespan": 525,
+    "num_segments": 3,
+    "all_segments_solved": true,
+    "end_time": "2025-07-15T06:56:27.337617"
+  },
+  "segment_results": [
+    {
+      "segment_id": 0,
+      "cost": 19329,
+      "makespan": 525,
+      "runtime_ms": 377.1212100982666,
+      "solved": true,
+      "output_file": "results/comprehensive/maze-128-128-10_2wp_100agents/segment_0.yaml"
+    },
+    {
+      "segment_id": 1,
+      "cost": 20519,
+      "makespan": 482,
+      "runtime_ms": 325.20294189453125,
+      "solved": true,
+      "output_file": "results/comprehensive/maze-128-128-10_2wp_100agents/segment_1.yaml"
+    },
+    {
+      "segment_id": 2,
+      "cost": 19777,
+      "makespan": 497,
+      "runtime_ms": 373.02708625793457,
+      "solved": true,
+      "output_file": "results/comprehensive/maze-128-128-10_2wp_100agents/segment_2.yaml"
+    }
+  ],
+  "agent_summary": {
+    "total_agents": 100,
+    "max_waypoints_per_agent": 2,
+    "total_waypoint_to_waypoint_transitions": 200,
+    "total_path_segments": 300
+  },
+  "performance_metrics": {
+    "avg_runtime_per_segment_ms": 358.45041275024414,
+    "avg_cost_per_segment": 19875.0,
+    "avg_cost_per_agent": 596.25,
+    "cost_efficiency": 55.34458967808412
+  }
+}

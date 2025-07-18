@@ -1,0 +1,61 @@
+{
+  "experiment_info": {
+    "map_file": "scripts/map/warehouse-20-40-10-2-1.map",
+    "scenario_file": "scripts/scen/warehouse-20-40-10/warehouse-20-40-10-2-1-random-1.scen",
+    "num_agents": 300,
+    "max_waypoints": 2,
+    "total_segments": 900,
+    "command": "lacam.py --exe build/main --map scripts/map/warehouse-20-40-10-2-1.map --scen scripts/scen/warehouse-20-40-10/warehouse-20-40-10-2-1-random-1.scen --num 300 --out results/comprehensive/warehouse-20-40-10-2-1_2wp_300agents",
+    "timestamp": "2025-07-15T06:57:37.926874",
+    "exe_path": "build/main",
+    "seed": 42,
+    "timeout": 60
+  },
+  "global_results": {
+    "total_cost": 149883,
+    "total_runtime_ms": 1483.4260940551758,
+    "wall_clock_time_ms": 1486.7644309997559,
+    "max_makespan": 419,
+    "num_segments": 3,
+    "all_segments_solved": true,
+    "end_time": "2025-07-15T06:57:39.413644"
+  },
+  "segment_results": [
+    {
+      "segment_id": 0,
+      "cost": 49642,
+      "makespan": 419,
+      "runtime_ms": 506.2212944030762,
+      "solved": true,
+      "output_file": "results/comprehensive/warehouse-20-40-10-2-1_2wp_300agents/segment_0.yaml"
+    },
+    {
+      "segment_id": 1,
+      "cost": 50846,
+      "makespan": 409,
+      "runtime_ms": 510.92052459716797,
+      "solved": true,
+      "output_file": "results/comprehensive/warehouse-20-40-10-2-1_2wp_300agents/segment_1.yaml"
+    },
+    {
+      "segment_id": 2,
+      "cost": 49395,
+      "makespan": 387,
+      "runtime_ms": 466.28427505493164,
+      "solved": true,
+      "output_file": "results/comprehensive/warehouse-20-40-10-2-1_2wp_300agents/segment_2.yaml"
+    }
+  ],
+  "agent_summary": {
+    "total_agents": 300,
+    "max_waypoints_per_agent": 2,
+    "total_waypoint_to_waypoint_transitions": 600,
+    "total_path_segments": 900
+  },
+  "performance_metrics": {
+    "avg_runtime_per_segment_ms": 494.4753646850586,
+    "avg_cost_per_segment": 49961.0,
+    "avg_cost_per_agent": 499.61,
+    "cost_efficiency": 100.81153199179852
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "experiment_info": {
+    "map_file": "scripts/map/ost003d.map",
+    "scenario_file": "scripts/scen/ost003d/ost003d-random-1.scen",
+    "num_agents": 500,
+    "max_waypoints": 2,
+    "total_segments": 1500,
+    "command": "lacam.py --exe build/main --map scripts/map/ost003d.map --scen scripts/scen/ost003d/ost003d-random-1.scen --num 500 --out results/comprehensive/ost003d_2wp_500agents",
+    "timestamp": "2025-07-15T06:55:37.128116",
+    "exe_path": "build/main",
+    "seed": 42,
+    "timeout": 60
+  },
+  "global_results": {
+    "total_cost": 255618,
+    "total_runtime_ms": 2967.195987701416,
+    "wall_clock_time_ms": 2970.9720611572266,
+    "max_makespan": 403,
+    "num_segments": 3,
+    "all_segments_solved": true,
+    "end_time": "2025-07-15T06:55:40.099095"
+  },
+  "segment_results": [
+    {
+      "segment_id": 0,
+      "cost": 84273,
+      "makespan": 399,
+      "runtime_ms": 885.4589462280273,
+      "solved": true,
+      "output_file": "results/comprehensive/ost003d_2wp_500agents/segment_0.yaml"
+    },
+    {
+      "segment_id": 1,
+      "cost": 85561,
+      "makespan": 403,
+      "runtime_ms": 1048.351526260376,
+      "solved": true,
+      "output_file": "results/comprehensive/ost003d_2wp_500agents/segment_1.yaml"
+    },
+    {
+      "segment_id": 2,
+      "cost": 85784,
+      "makespan": 398,
+      "runtime_ms": 1033.3855152130127,
+      "solved": true,
+      "output_file": "results/comprehensive/ost003d_2wp_500agents/segment_2.yaml"
+    }
+  ],
+  "agent_summary": {
+    "total_agents": 500,
+    "max_waypoints_per_agent": 2,
+    "total_waypoint_to_waypoint_transitions": 1000,
+    "total_path_segments": 1500
+  },
+  "performance_metrics": {
+    "avg_runtime_per_segment_ms": 989.0653292338053,
+    "avg_cost_per_segment": 85206.0,
+    "avg_cost_per_agent": 511.236,
+    "cost_efficiency": 86.03850683820768
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "experiment_info": {
+    "map_file": "scripts/map/maze-128-128-10.map",
+    "scenario_file": "scripts/scen/maze-128-128-10/maze-128-128-10-random-2.scen",
+    "num_agents": 200,
+    "max_waypoints": 4,
+    "total_segments": 1000,
+    "command": "lacam.py --exe build/main --map scripts/map/maze-128-128-10.map --scen scripts/scen/maze-128-128-10/maze-128-128-10-random-2.scen --num 200 --out results/comprehensive/maze-128-128-10_4wp_200agents",
+    "timestamp": "2025-07-15T06:56:39.149748",
+    "exe_path": "build/main",
+    "seed": 42,
+    "timeout": 60
+  },
+  "global_results": {
+    "total_cost": 208471,
+    "total_runtime_ms": 2639.617919921875,
+    "wall_clock_time_ms": 2643.625259399414,
+    "max_makespan": 521,
+    "num_segments": 5,
+    "all_segments_solved": true,
+    "end_time": "2025-07-15T06:56:41.793383"
+  },
+  "segment_results": [
+    {
+      "segment_id": 0,
+      "cost": 42766,
+      "makespan": 521,
+      "runtime_ms": 507.7500343322754,
+      "solved": true,
+      "output_file": "results/comprehensive/maze-128-128-10_4wp_200agents/segment_0.yaml"
+    },
+    {
+      "segment_id": 1,
+      "cost": 40278,
+      "makespan": 478,
+      "runtime_ms": 523.8113403320312,
+      "solved": true,
+      "output_file": "results/comprehensive/maze-128-128-10_4wp_200agents/segment_1.yaml"
+    },
+    {
+      "segment_id": 2,
+      "cost": 42701,
+      "makespan": 462,
+      "runtime_ms": 487.78605461120605,
+      "solved": true,
+      "output_file": "results/comprehensive/maze-128-128-10_4wp_200agents/segment_2.yaml"
+    },
+    {
+      "segment_id": 3,
+      "cost": 43835,
+      "makespan": 498,
+      "runtime_ms": 648.8831043243408,
+      "solved": true,
+      "output_file": "results/comprehensive/maze-128-128-10_4wp_200agents/segment_3.yaml"
+    },
+    {
+      "segment_id": 4,
+      "cost": 38891,
+      "makespan": 486,
+      "runtime_ms": 471.3873863220215,
+      "solved": true,
+      "output_file": "results/comprehensive/maze-128-128-10_4wp_200agents/segment_4.yaml"
+    }
+  ],
+  "agent_summary": {
+    "total_agents": 200,
+    "max_waypoints_per_agent": 4,
+    "total_waypoint_to_waypoint_transitions": 800,
+    "total_path_segments": 1000
+  },
+  "performance_metrics": {
+    "avg_runtime_per_segment_ms": 527.923583984375,
+    "avg_cost_per_segment": 41694.2,
+    "avg_cost_per_agent": 1042.355,
+    "cost_efficiency": 78.85799973304877
+  }
+}

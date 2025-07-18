@@ -1,0 +1,109 @@
+{
+  "experiment_info": {
+    "map_file": "scripts/map/ost003d.map",
+    "scenario_file": "scripts/scen/ost003d/ost003d-random-3.scen",
+    "num_agents": 200,
+    "max_waypoints": 8,
+    "total_segments": 1800,
+    "command": "lacam.py --exe build/main --map scripts/map/ost003d.map --scen scripts/scen/ost003d/ost003d-random-3.scen --num 200 --out results/comprehensive/ost003d_8wp_200agents",
+    "timestamp": "2025-07-15T06:55:59.910488",
+    "exe_path": "build/main",
+    "seed": 42,
+    "timeout": 60
+  },
+  "global_results": {
+    "total_cost": 286333,
+    "total_runtime_ms": 3340.4994010925293,
+    "wall_clock_time_ms": 3347.261667251587,
+    "max_makespan": 412,
+    "num_segments": 9,
+    "all_segments_solved": true,
+    "end_time": "2025-07-15T06:56:03.257756"
+  },
+  "segment_results": [
+    {
+      "segment_id": 0,
+      "cost": 31621,
+      "makespan": 397,
+      "runtime_ms": 356.4953804016113,
+      "solved": true,
+      "output_file": "results/comprehensive/ost003d_8wp_200agents/segment_0.yaml"
+    },
+    {
+      "segment_id": 1,
+      "cost": 30958,
+      "makespan": 392,
+      "runtime_ms": 401.15809440612793,
+      "solved": true,
+      "output_file": "results/comprehensive/ost003d_8wp_200agents/segment_1.yaml"
+    },
+    {
+      "segment_id": 2,
+      "cost": 31141,
+      "makespan": 370,
+      "runtime_ms": 365.10610580444336,
+      "solved": true,
+      "output_file": "results/comprehensive/ost003d_8wp_200agents/segment_2.yaml"
+    },
+    {
+      "segment_id": 3,
+      "cost": 31108,
+      "makespan": 399,
+      "runtime_ms": 328.4924030303955,
+      "solved": true,
+      "output_file": "results/comprehensive/ost003d_8wp_200agents/segment_3.yaml"
+    },
+    {
+      "segment_id": 4,
+      "cost": 33018,
+      "makespan": 411,
+      "runtime_ms": 406.2519073486328,
+      "solved": true,
+      "output_file": "results/comprehensive/ost003d_8wp_200agents/segment_4.yaml"
+    },
+    {
+      "segment_id": 5,
+      "cost": 31421,
+      "makespan": 386,
+      "runtime_ms": 354.9675941467285,
+      "solved": true,
+      "output_file": "results/comprehensive/ost003d_8wp_200agents/segment_5.yaml"
+    },
+    {
+      "segment_id": 6,
+      "cost": 33062,
+      "makespan": 407,
+      "runtime_ms": 393.71347427368164,
+      "solved": true,
+      "output_file": "results/comprehensive/ost003d_8wp_200agents/segment_6.yaml"
+    },
+    {
+      "segment_id": 7,
+      "cost": 30964,
+      "makespan": 391,
+      "runtime_ms": 390.14577865600586,
+      "solved": true,
+      "output_file": "results/comprehensive/ost003d_8wp_200agents/segment_7.yaml"
+    },
+    {
+      "segment_id": 8,
+      "cost": 33040,
+      "makespan": 412,
+      "runtime_ms": 344.16866302490234,
+      "solved": true,
+      "output_file": "results/comprehensive/ost003d_8wp_200agents/segment_8.yaml"
+    }
+  ],
+  "agent_summary": {
+    "total_agents": 200,
+    "max_waypoints_per_agent": 8,
+    "total_waypoint_to_waypoint_transitions": 1600,
+    "total_path_segments": 1800
+  },
+  "performance_metrics": {
+    "avg_runtime_per_segment_ms": 371.16660012139215,
+    "avg_cost_per_segment": 31814.777777777777,
+    "avg_cost_per_agent": 1431.665,
+    "cost_efficiency": 85.54246081248438
+  }
+}

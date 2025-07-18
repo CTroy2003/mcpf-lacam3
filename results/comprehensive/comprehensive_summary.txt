@@ -1,0 +1,76 @@
+COMPREHENSIVE LACAM TESTING REPORT
+================================================================================
+
+Generated: 2025-07-15T06:58:22.410952
+Total Experiments: 45
+
+Success Rate: 45/45 (100.0%)
+
+RESULTS SUMMARY
+----------------------------------------------------------------------------------------------------
+Map                  WP  Agents  Status     Runtime    Cost         Cost/Agent  
+----------------------------------------------------------------------------------------------------
+ost003d              2   100     success    914ms      45,172       451.7       
+ost003d              2   200     success    1160ms     94,440       472.2       
+ost003d              2   300     success    1544ms     144,813      482.7       
+ost003d              2   400     success    2431ms     194,297      485.7       
+ost003d              2   500     success    2967ms     255,618      511.2       
+ost003d              4   100     success    1337ms     77,530       775.3       
+ost003d              4   200     success    1956ms     158,877      794.4       
+ost003d              4   300     success    2625ms     241,749      805.8       
+ost003d              4   400     success    5685ms     326,536      816.3       
+ost003d              4   500     success    5617ms     431,654      863.3       
+ost003d              8   100     success    2383ms     139,734      1397.3      
+ost003d              8   200     success    3340ms     286,333      1431.7      
+ost003d              8   300     success    4536ms     433,501      1445.0      
+ost003d              8   400     success    7216ms     583,241      1458.1      
+ost003d              8   500     success    11118ms    763,237      1526.5      
+maze-128-128-10      2   100     success    1075ms     59,625       596.2       
+maze-128-128-10      2   200     success    1558ms     122,093      610.5       
+maze-128-128-10      2   300     success    2382ms     185,435      618.1       
+maze-128-128-10      2   400     success    2700ms     261,134      652.8       
+maze-128-128-10      2   500     success    3413ms     339,729      679.5       
+maze-128-128-10      4   100     success    1600ms     99,617       996.2       
+maze-128-128-10      4   200     success    2640ms     208,471      1042.4      
+maze-128-128-10      4   300     success    3810ms     317,790      1059.3      
+maze-128-128-10      4   400     success    4305ms     440,553      1101.4      
+maze-128-128-10      4   500     success    7039ms     568,170      1136.3      
+maze-128-128-10      8   100     success    4598ms     182,179      1821.8      
+maze-128-128-10      8   200     success    4836ms     368,872      1844.4      
+maze-128-128-10      8   300     success    6646ms     572,156      1907.2      
+maze-128-128-10      8   400     success    9173ms     790,239      1975.6      
+maze-128-128-10      8   500     success    13388ms    1,021,385    2042.8      
+warehouse-20-40-10-  2   100     success    782ms      48,893       488.9       
+warehouse-20-40-10-  2   200     success    1145ms     99,962       499.8       
+warehouse-20-40-10-  2   300     success    1483ms     149,883      499.6       
+warehouse-20-40-10-  2   400     success    1891ms     202,430      506.1       
+warehouse-20-40-10-  2   500     success    2660ms     255,097      510.2       
+warehouse-20-40-10-  4   100     success    1290ms     79,251       792.5       
+warehouse-20-40-10-  4   200     success    1823ms     162,520      812.6       
+warehouse-20-40-10-  4   300     success    2548ms     242,916      809.7       
+warehouse-20-40-10-  4   400     success    3215ms     327,014      817.5       
+warehouse-20-40-10-  4   500     success    4207ms     415,570      831.1       
+warehouse-20-40-10-  8   100     success    2372ms     142,435      1424.3      
+warehouse-20-40-10-  8   200     success    3301ms     291,758      1458.8      
+warehouse-20-40-10-  8   300     success    6263ms     439,117      1463.7      
+warehouse-20-40-10-  8   400     success    5746ms     590,150      1475.4      
+warehouse-20-40-10-  8   500     success    7299ms     745,229      1490.5      
+
+
+PERFORMANCE ANALYSIS BY MAP
+--------------------------------------------------
+
+ost003d:
+  2wp: Avg cost/agent=480.7, Avg runtime=1803ms
+  4wp: Avg cost/agent=811.0, Avg runtime=3444ms
+  8wp: Avg cost/agent=1451.7, Avg runtime=5719ms
+
+maze-128-128-10:
+  2wp: Avg cost/agent=631.4, Avg runtime=2226ms
+  4wp: Avg cost/agent=1067.1, Avg runtime=3879ms
+  8wp: Avg cost/agent=1918.3, Avg runtime=7728ms
+
+warehouse-20-40-10-2-1:
+  2wp: Avg cost/agent=500.9, Avg runtime=1592ms
+  4wp: Avg cost/agent=812.7, Avg runtime=2617ms
+  8wp: Avg cost/agent=1462.5, Avg runtime=4996ms

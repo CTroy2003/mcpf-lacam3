@@ -1,0 +1,31 @@
+Multi-Waypoint LACAM Results Summary
+========================================
+
+Experiment Date: 2025-07-15T06:55:51.848214
+Map: scripts/map/ost003d.map
+Scenario: scripts/scen/ost003d/ost003d-random-2.scen
+Command: lacam.py --exe build/main --map scripts/map/ost003d.map --scen scripts/scen/ost003d/ost003d-random-2.scen --num 500 --out results/comprehensive/ost003d_4wp_500agents
+
+Agent Configuration:
+  Total Agents: 500
+  Max Waypoints per Agent: 4
+  Total Path Segments: 2500
+
+Global Results:
+  Total Cost (SOC): 431654
+  Max Makespan: 416
+  Total Runtime: 5617ms
+  Wall-Clock Time: 5623ms
+  All Segments Solved: True
+
+Performance Metrics:
+  Avg Runtime per Segment: 1123.4ms
+  Avg Cost per Segment: 86330.8
+  Avg Cost per Agent: 863.3
+
+Segment Breakdown:
+  Segment 0: cost=84273, makespan=399, runtime=919ms, solved=True
+  Segment 1: cost=85561, makespan=403, runtime=1070ms, solved=True
+  Segment 2: cost=87526, makespan=413, runtime=1061ms, solved=True
+  Segment 3: cost=83282, makespan=407, runtime=1239ms, solved=True
+  Segment 4: cost=91012, makespan=416, runtime=1328ms, solved=True
