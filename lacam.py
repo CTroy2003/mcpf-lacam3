@@ -9,6 +9,7 @@ import sys
 import os
 import json
 import datetime
+import shutil
 
 # Global list to track temp files for cleanup
 temp_files = []
@@ -160,7 +161,6 @@ def run_lacam_segment(exe, map_path, scen_path, num_agents, seed, timeout):
         '--map', str(map_path),
         '--scen', str(scen_path),
         '--num', str(num_agents),
-        '--no-star',
         '--seed', str(seed),
         '--time_limit_sec', str(timeout),
         '--output', temp_out.name
@@ -206,7 +206,7 @@ def main():
     parser.add_argument('--num', type=int, default=None, help='Number of agents to use (default: use all agents)')
     parser.add_argument('--multi_scale', action='store_true', help='Run with agent counts 100, 200, 300, 400, 500')
     parser.add_argument('--seed', type=int, default=42, help='Random seed')
-    parser.add_argument('--timeout', type=int, default=60, help='Timeout in seconds')
+    parser.add_argument('--timeout', type=int, default=100, help='Total timeout in seconds (divided among segments)')
     parser.add_argument('--out', required=True, help='Output directory for results')
     
     args = parser.parse_args()
@@ -289,8 +289,15 @@ def run_experiment(agents, args, out_dir):
     # Determine maximum number of segments needed
     max_waypoints = max(len(agent['waypoints']) for agent in agents)
     num_agents = len(agents)
-    
+    num_segments = max_waypoints + 1  # 0 to max_waypoints inclusive
+
+    # Calculate per-segment timeout (divide total timeout equally)
+    per_segment_timeout = args.timeout // num_segments
+    if per_segment_timeout < 1:
+        per_segment_timeout = 1  # Minimum 1 second per segment
+
     print(f"Found {num_agents} agents with up to {max_waypoints} waypoints each")
+    print(f"Total timeout: {args.timeout}s, Per-segment timeout: {per_segment_timeout}s ({num_segments} segments)")
     
     # Run segments
     total_runtime = 0
@@ -304,16 +311,16 @@ def run_experiment(agents, args, out_dir):
         'scenario_file': str(args.scen),
         'num_agents': num_agents,
         'max_waypoints': max_waypoints,
-        'total_segments': num_agents * (max_waypoints + 1),
+        'total_segments': num_segments,
         'command': ' '.join(sys.argv),
         'timestamp': datetime.datetime.now().isoformat(),
         'exe_path': str(args.exe),
-        'seed': args.seed,
-        'timeout': args.timeout
+        'total_timeout': args.timeout,
+        'per_segment_timeout': per_segment_timeout
     }
     
     try:
-        for segment_idx in range(max_waypoints + 1):  # 0 to max_waypoints inclusive
+        for segment_idx in range(num_segments):  # 0 to max_waypoints inclusive
             print(f"\n--- Segment {segment_idx} ---")
             
             # Create temporary scenario for this segment
@@ -324,7 +331,7 @@ def run_experiment(agents, args, out_dir):
             
             # Run LaCAM
             cost, runtime, plan_file = run_lacam_segment(
-                args.exe, args.map, temp_scen, num_agents, args.seed, args.timeout
+                args.exe, args.map, temp_scen, num_agents, args.seed, per_segment_timeout
             )
             
             if cost is None:
@@ -335,7 +342,8 @@ def run_experiment(agents, args, out_dir):
             # Save segment plan
             segment_out = out_dir / f"segment_{segment_idx}.yaml"
             if plan_file and os.path.exists(plan_file):
-                os.rename(plan_file, segment_out)
+                shutil.copy2(plan_file, segment_out)
+                os.remove(plan_file)  # Remove the original temp file
                 print(f"Saved segment plan to {segment_out}")
             
             # Parse additional metrics from segment output

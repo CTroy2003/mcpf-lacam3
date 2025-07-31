@@ -22,9 +22,9 @@ class ComprehensiveTestRunner:
         # Test configuration
         self.agent_counts = [100, 200, 300, 400, 500]
         self.waypoint_configs = [
-            {"waypoints": 2, "suffix": "1"},
-            {"waypoints": 4, "suffix": "2"},
-            {"waypoints": 8, "suffix": "3"}
+            {"waypoints": 2, "suffix": "3"},  # 2 waypoints = random-3
+            {"waypoints": 4, "suffix": "4"},  # 4 waypoints = random-4  
+            {"waypoints": 8, "suffix": "5"}   # 8 waypoints = random-5
         ]
         
         # Map configurations - (scenario_dir_name, map_file_name)
@@ -82,12 +82,21 @@ class ComprehensiveTestRunner:
         suffix = wp_config["suffix"]
         
         print(f"\n🚀 Running: {map_name} | {waypoints}wp | {agent_count} agents")
+        sys.stdout.flush()  # Force output to appear immediately
         
         # Paths
         map_file = self.maps_dir / f"{map_name}.map"
         scenario_file = self.scenarios_dir / map_config['scen_dir'] / f"{map_name}-random-{suffix}.scen"
         output_dir = self.results_dir / f"{map_name}_{waypoints}wp_{agent_count}agents"
-        
+
+        # Debug: Print file paths
+        print(f"🔍 Debug info:")
+        print(f"   Map file: {map_file} (exists: {map_file.exists()})")
+        print(f"   Scenario file: {scenario_file} (exists: {scenario_file.exists()})")
+        print(f"   Output dir: {output_dir}")
+        print(f"   Executable: {self.exe_path} (exists: {self.exe_path.exists()})")
+        sys.stdout.flush()
+
         # Run the experiment
         cmd = [
             "python3", str(self.lacam_script),
@@ -95,13 +104,22 @@ class ComprehensiveTestRunner:
             "--map", str(map_file),
             "--scen", str(scenario_file),
             "--num", str(agent_count),
+            "--timeout", "100",
             "--out", str(output_dir)
         ]
-        
+
+        # Debug: Print exact command
+        print(f"�� Command: {' '.join(cmd)}")
+        print(f"⏰ Starting subprocess at {datetime.datetime.now()}")
+        sys.stdout.flush()
+
         start_time = time.time()
         try:
-            result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)  # 5 min timeout
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)  # 2 min timeout (100s + buffer)
             end_time = time.time()
+            
+            print(f"⏰ Subprocess completed at {datetime.datetime.now()}, took {end_time - start_time:.1f}s")
+            sys.stdout.flush()
             
             if result.returncode == 0:
                 # Parse results from the output directory
@@ -119,6 +137,8 @@ class ComprehensiveTestRunner:
                         'data': summary_data
                     }
                 else:
+                    print(f"❌ Summary file missing: {summary_file}")
+                    sys.stdout.flush()
                     return {
                         'map': map_name,
                         'waypoints': waypoints,
@@ -128,26 +148,33 @@ class ComprehensiveTestRunner:
                         'error': 'Summary file not found'
                     }
             else:
+                print(f"❌ Subprocess failed with return code {result.returncode}")
+                sys.stdout.flush()
                 return {
                     'map': map_name,
                     'waypoints': waypoints,
                     'agent_count': agent_count,
                     'status': 'failed',
                     'wall_time': end_time - start_time,
+                    'return_code': result.returncode,
                     'error': result.stderr,
                     'stdout': result.stdout
                 }
                 
         except subprocess.TimeoutExpired:
+            print(f"❌ Subprocess timed out after 2 minutes")
+            sys.stdout.flush()
             return {
                 'map': map_name,
                 'waypoints': waypoints,
                 'agent_count': agent_count,
                 'status': 'timeout',
-                'wall_time': 300,
-                'error': 'Experiment timed out after 5 minutes'
+                'wall_time': 120,
+                'error': 'Experiment timed out after 2 minutes'
             }
         except Exception as e:
+            print(f"❌ Exception during subprocess: {e}")
+            sys.stdout.flush()
             return {
                 'map': map_name,
                 'waypoints': waypoints,
@@ -164,7 +191,8 @@ class ComprehensiveTestRunner:
         
         print(f"\n🎯 Starting comprehensive testing: {total_experiments} experiments")
         print(f"Maps: {[m['map_file'] for m in self.maps]}")
-        print(f"Waypoint configs: {[f'{wp['waypoints']}wp' for wp in self.waypoint_configs]}")
+        waypoint_cfgs = [f"{wp['waypoints']}wp" for wp in self.waypoint_configs]
+        print(f"Waypoint configs: {waypoint_cfgs}")
         print(f"Agent counts: {self.agent_counts}")
         
         start_time = time.time()
@@ -176,9 +204,16 @@ class ComprehensiveTestRunner:
                     print(f"\n{'='*60}")
                     print(f"EXPERIMENT {experiment_count}/{total_experiments}")
                     print(f"{'='*60}")
+                    sys.stdout.flush()
+                    
+                    print(f"🎯 About to start experiment: {map_config['map_file']} | {wp_config['waypoints']}wp | {agent_count} agents")
+                    sys.stdout.flush()
                     
                     result = self.run_single_experiment(map_config, wp_config, agent_count)
                     self.all_results.append(result)
+                    
+                    print(f"📊 Experiment {experiment_count} completed with status: {result['status']}")
+                    sys.stdout.flush()
                     
                     # Print immediate result
                     if result['status'] == 'success':
@@ -187,11 +222,17 @@ class ComprehensiveTestRunner:
                         print(f"✅ SUCCESS: Cost={cost:,}, Runtime={runtime:.0f}ms")
                     else:
                         print(f"❌ FAILED: {result['status']}")
+                        if result.get('return_code'):
+                            print(f"   Return code: {result['return_code']}")
                         if result.get('error'):
-                            print(f"   Error: {result['error'][:100]}...")
+                            print(f"   Error: {result['error']}")
                         if result.get('stdout'):
-                            print(f"   Stdout: {result['stdout'][:100]}...")
-                        
+                            print(f"   Stdout: {result['stdout']}")
+                    
+                    sys.stdout.flush()
+                    print(f"🔄 Moving to next experiment...")
+                    sys.stdout.flush()
+                    
         total_time = time.time() - start_time
         print(f"\n🎉 All experiments completed in {total_time:.1f} seconds")
         
